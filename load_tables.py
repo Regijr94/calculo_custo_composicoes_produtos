@@ -36,7 +36,7 @@ df_cache = pl.DataFrame(schema=[(col, dtype()) for col, dtype in schema.items()]
 
 # Ler o arquivo de custo unitário com otimização
 custo = pl.read_csv(
-    "C:/Users/Reginaldo Junior/Desktop/Custo_HOst/df_custo_msk.csv",
+    "seu diretorio aqui",
     schema_overrides=schema_custo_unitario
 ).with_columns(
     pl.col("Periodo").dt.truncate("1d").alias("Periodo")
@@ -44,7 +44,7 @@ custo = pl.read_csv(
 
 # Ler o arquivo de composição com otimização
 composicao = pl.read_csv(
-    "C:/Users/Reginaldo Junior/Desktop/Custo_HOst/df_composicao_msk.csv",
+    "seu diretorio aqui",
     schema_overrides=schema_composicao
 )
 
@@ -271,7 +271,7 @@ df = df.with_columns(
 
 #print(df.filter(pl.col('Produto')=='857'))
 ## Caminho do arquivo de saída
-file_path = "C:/Users/Reginaldo Junior/Desktop/Custo_HOst/custo_misaki_1024.csv"
+file_path = "seu diretorio aqui"
 #
 if os.path.exists(file_path):
     os.remove(file_path)
